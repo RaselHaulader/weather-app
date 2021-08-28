@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +9,22 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Weather</title>
 </head>
-
 <body>
   <section class="container mt-5 ">
-    <div class="bg-primary m-auto text-white w-50 rounded-3">
-      <div class="p-3 w-100 d-flex">
-        <h2 class="me-3 col-5 text-center">Check Weather</h2>
-        <div class="col-7 d-flex justify-content-end align-items-center">
-          <input id="input-field" placeholder="Enter Your location" class="border-0 m-2 p-1 rounded-2 w-50" type="name">
-          <button onclick="loadWeather()" class="btn text-white btn-success me-2">Search</button>
+    <div style="background-image: url(images/bg-image.jpg);" class=" m-auto  text-white  rounded-3">
+        <div class="p-3  row">
+          <div class="  col-md-5 col-12 text-center">
+            <h3>Check Weather</h3>
+          </div>
+          <div class="col-md-7  col-12 d-flex justify-content-end align-items-center">
+            <input id="input-field" placeholder="Enter Your location" class="border-0 m-2 p-1 rounded-2 w-50" type="name">
+            <button onclick="loadWeather()" class="btn text-white btn-primary me-2">Search</button>
+          </div>
         </div>
-      </div>
+      
       <div id="weather-body">
-     
-    </div>
+        
+      </div>
   </section>
   <script src="script.js"></script>
 </body>
