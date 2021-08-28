@@ -10,17 +10,10 @@ const loadWeather = () => {
   if (place == '' || !isNaN(check)) {
     return
   }
-  // add loading spinner
-  document.getElementById('weather-body').textContent = '';
-  const weatherBody = document.getElementById('weather-body');
-  const spin = document.createElement('div');
-  spin.innerHTML = `
-       <div class="d-flex justify-content-center p-4" id="spin"">
-          <div class="spinner-border text-warning " id="spin"  role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </div>`
-  weatherBody.appendChild(spin)
+  // clear body 
+  document.getElementById('weather-body').innerHTML = '';
+  // show loading spinner
+  document.getElementById('spinner').classList.remove('d-none')
   //make request to url
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${myKey}`)
     .then(response => response.json())
@@ -29,11 +22,11 @@ const loadWeather = () => {
     })
     .catch(error => displayError(error));
 };
-
-// fetch data set on display
+// fetched data set on display
 const setDisplay = weather => {
  // stop loading spinner and set data to display
-  document.getElementById('weather-body').textContent = '';
+ document.getElementById('spinner').classList.add('d-none')
+ //add weather body html 
   const weatherBody = document.getElementById('weather-body');
   weatherBody.innerHTML = `
     <hr class="m-0 p-0">
